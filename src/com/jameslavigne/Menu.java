@@ -85,8 +85,8 @@ public class Menu {
         }
         System.out.println("Please choose an option listed below. (1-" + (listSize + 3) + "):");
         for (int i = 0; i < listSize; i++) {
-            System.out.println("Enter " + (i + 1) + ". View Book (" + books.get(i).getTitle() + " by "
-                    + books.get(i).getAuthor() + " - ISBN:" + books.get(i).getIsbn() + ")");
+            System.out.println("Enter " + (i + 1) + ". View Book (" + ANSI_CYAN + books.get(i).getTitle() + " by "
+                    + books.get(i).getAuthor() + " - ISBN:" + books.get(i).getIsbn() + ANSI_NORMAL + ")");
         }
         System.out.println("Enter " + (listSize + 1) + ". View Cart");
         System.out.println("Enter " + (listSize + 2) + ". Back");

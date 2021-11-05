@@ -1,9 +1,11 @@
 package com.jameslavigne;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
+    public static DecimalFormat df = new DecimalFormat("0.00");
     //console colors
     public static final String ANSI_NORMAL = "\033[0m";
     public static final String ANSI_RED = "\033[0;31m";
@@ -81,7 +83,7 @@ public class Menu {
         if (books != null) {
             listSize = books.size();
         }
-        System.out.println("Please choose an option listed below. (1-" + (listSize + 2) + "):");
+        System.out.println("Please choose an option listed below. (1-" + (listSize + 3) + "):");
         for (int i = 0; i < listSize; i++) {
             System.out.println("Enter " + (i + 1) + ". View Book (" + books.get(i).getTitle() + " by "
                     + books.get(i).getAuthor() + " - ISBN:" + books.get(i).getIsbn() + ")");
@@ -91,9 +93,18 @@ public class Menu {
         System.out.println("Enter " + (listSize + 3) + ". Exit");
     }
 
+    public static void printBookInfo(Book book){
+        System.out.println(ANSI_CYAN + "--------------------------");
+        System.out.println("Title: " + book.getTitle());
+        System.out.println("Author: " + book.getAuthor());
+        System.out.println("ISBN: " + book.getIsbn());
+        System.out.println("Price: $" + book.getPrice());
+        System.out.println("--------------------------" + ANSI_NORMAL);
+    }
+
     public static void exit(){
-        System.out.println("Exiting...");
-        System.out.println("Bye");
+        System.out.println(ANSI_CYAN + "Exiting...");
+        System.out.println("Bye" + ANSI_NORMAL);
         System.exit(0);
     }
 }
